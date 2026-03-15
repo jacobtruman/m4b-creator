@@ -1,6 +1,6 @@
 [project]
 name = "m4b-creator"
-version = "1.0.4"
+version = "1.0.5"
 description = "Create M4B audiobook files from audio chapters using ffmpeg"
 readme = "README.md"
 requires-python = ">=3.8"
