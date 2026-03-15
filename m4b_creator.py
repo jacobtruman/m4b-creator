@@ -36,6 +36,7 @@ class M4BCreator:
                 level=logging.DEBUG,
                 format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
             )
+            logger.setLevel(logging.DEBUG)
         self.verbose = verbose
         logger.debug("Initializing M4BCreator")
         self._verify_ffmpeg()
