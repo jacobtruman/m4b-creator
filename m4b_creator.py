@@ -32,13 +32,15 @@ class M4BCreator:
 
     def __init__(self, verbose: bool = False):
         if verbose:
-            logging.basicConfig(
-                level=logging.DEBUG,
-                format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-            )
             logger.setLevel(logging.DEBUG)
+            if not logger.handlers:
+                handler = logging.StreamHandler()
+                handler.setFormatter(logging.Formatter(
+                    "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+                ))
+                logger.addHandler(handler)
         self.verbose = verbose
-        logger.debug("Initializing M4BCreator")
+        logger.debug("Initializing M4BCreator")e
         self._verify_ffmpeg()
 
     def _verify_ffmpeg(self):
